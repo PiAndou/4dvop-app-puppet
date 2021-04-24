@@ -4,8 +4,9 @@ class nginx {
     ensure => installed,
   }
 
-  file { '/etc/nginx/nginx.conf.default':
+  file { '/etc/nginx/nginx.conf':
     ensure => file,
+    backup => true
     content => file('nginx/nginx.conf'),
     notify => Service['nginx']
   }

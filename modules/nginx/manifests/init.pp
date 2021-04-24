@@ -6,7 +6,7 @@ class nginx {
 
   file { '/etc/nginx/nginx.conf':
     ensure => file,
-    backup => true
+    backup => true,
     content => file('nginx/nginx.conf'),
     notify => Service['nginx']
   }

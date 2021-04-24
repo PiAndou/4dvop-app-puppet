@@ -19,7 +19,11 @@ class nginx {
   file { '/usr/share/nginx/html':
     ensure => present,
     force => true,
-    replace => true,
-    source   => 'https://github.com/diranetafen/static-website-example.git',
+  }
+  
+  vcsrepo { '/usr/share/nginx/html':
+    ensure   => present,
+    provider => git,
+    source   => 'git://github.com/diranetafen/static-website-example.git',
   }
 }

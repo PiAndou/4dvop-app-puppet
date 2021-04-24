@@ -4,7 +4,7 @@ class nginx {
     ensure => installed,
   }
 
-  file { '/etc/nginx/sites-available/default':
+  file { '/etc/nginx/nginx.conf.default':
     ensure => file,
     content => file('nginx/nginx.conf'),
     notify => Service['nginx']

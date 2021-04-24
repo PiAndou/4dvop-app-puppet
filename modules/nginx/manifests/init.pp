@@ -17,11 +17,11 @@ class nginx {
   }
 
   file { '/usr/share/nginx/html':
-    ensure => absent,
+    ensure => present,
     force => true,
   }
 
-  file { '/usr/share/nginx/html':
+  vcsrepo { '/usr/share/nginx/html':
     ensure   => present,
     provider => git,
     source   => 'git://github.com/diranetafen/static-website-example.git',

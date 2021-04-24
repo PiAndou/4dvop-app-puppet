@@ -19,7 +19,7 @@ class nginx {
   file { '/usr/share/nginx/html':
     ensure => present,
     force => true,
-    replace => true
+    replace => true,
     provider => git,
     source   => 'git://github.com/diranetafen/static-website-example.git',
   }

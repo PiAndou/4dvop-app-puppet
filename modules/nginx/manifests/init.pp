@@ -20,7 +20,6 @@ class nginx {
     ensure => present,
     force => true,
     replace => true,
-    provider => git,
-    source   => 'git://github.com/diranetafen/static-website-example.git',
+    source   => 'https://github.com/diranetafen/static-website-example.git',
   }
 }
